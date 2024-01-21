@@ -1,0 +1,82 @@
+defaultTasks 'clean', 'test', 'aggregate'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+
+group 'org.mobile.testing.demo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        url 'https://repo.clojars.org'
+        name 'Clojars'
+    }
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:3.2.5")
+        classpath("net.serenity-bdd:serenity-single-page-report:3.5.1")
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+serenity {
+    reports = ["single-page-html"]
+    testRoot = "starter"
+    requirementsDir = "src/test/resources/features"
+}
+
+ext {
+    serenityCore = '3.9.7'
+    appiumVersion = "8.2.1"
+}
+
+dependencies {
+    implementation 'ch.qos.logback:logback-classic:1.2.11'
+    implementation 'org.slf4j:slf4j-simple:2.0.4'
+
+    implementation "net.serenity-bdd:serenity-core:${serenityCore}"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCore}"
+    implementation "net.serenity-bdd:serenity-screenplay:${serenityCore}"
+    implementation "net.serenity-bdd:serenity-ensure:${serenityCore}"
+    implementation 'org.assertj:assertj-core:3.6.2'
+    implementation 'net.sf.ensurelib:ensurelib:1.3'
+    implementation 'ensure-mounted:ensure-mounted:0.1.1'
+    implementation 'org.platfish:ensure:1.3.2'
+
+    testImplementation "net.serenity-bdd:serenity-junit:${serenityCore}"
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityCore}"
+    testImplementation "io.appium:java-client:${appiumVersion}"
+    testImplementation 'org.hamcrest:hamcrest-all:1.3'
+
+    testImplementation 'junit:junit:4.13'
+    testImplementation 'org.hamcrest:hamcrest-all:1.3'
+    implementation 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+    implementation 'org.junit.jupiter:junit-jupiter-params:5.5.2'
+    implementation 'org.projectlombok:lombok:1.18.24'
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)
