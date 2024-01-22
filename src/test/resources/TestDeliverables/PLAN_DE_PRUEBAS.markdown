@@ -103,7 +103,7 @@ Conexión a Internet para la realización de la reserva.
 
 ### FLUJOS A PROBAR (dentro de alcance)
 
-Test diseñados para validar los escenarios **Happy Paths** 😃
+Test diseñados para validar los escenarios **Happy Paths** 
 
 ***Característica:*** Creación de un servicio completo de alojamiento
 Como usuario, quiero utilizar el servicio de reservas, para buscar mi mejor opción de alojamiento
@@ -119,7 +119,7 @@ Como usuario, quiero utilizar el servicio de reservas, para buscar mi mejor opci
 - [x] [Entonces] - valida que el valor de la reserva es el correcto
 ***
 
-Test diseñados para validar los escenarios **UNHappy Paths** 🤡
+Test diseñados para validar los escenarios **UNHappy Paths** 
 
 > **✨ FEATURE**: UnHappy Paths | Validar que no se permita buscar un alojamiento sin ingresar una ciudad de destino
 - [x] [Dado] que el usuario seleccione la opción de buscar sin colocar la cuidad de destino
@@ -132,7 +132,7 @@ Test diseñados para validar los escenarios **UNHappy Paths** 🤡
 ### ENTEGRABLES DE PRUEBAS
 
 > ☑️ El plan de pruebas actual, la ruta de su ubicación es: `resources/TestDeliverables/PLAN_DE_PRUEBAS.markdown`  
-> ☑️ El informe del resultado de pruebas, la ruta de su ubicación es: `target/site/serenity/serenity-summary.html`   
+> ☑️ El informe del resultado de pruebas, la ruta de su ubicación es: `target/site/serenity/index.html`   
 > ☑️ El repositorio en GitHub con los scripts
 > desarrollados: [booking-mobile-automation-testing](https://github.com/osborrero/reto_tecnico_mobile.git)
 ***
