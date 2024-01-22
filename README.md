@@ -3,11 +3,10 @@ Este es un proyecto de Automatización Mobile que utiliza Serenity BDD y Appium
 para la creación de un framework de automatización que permita probar el apk [BOOKING](https://drive.google.com/file/d/1ruY_5qcqWlsE3-W3rgXpFyyMiO59wFUc/view?usp=sharing)
 ***
 
-## 🏠 Detalles del Tester
+## Datos Personales
 
 * Name: Oswaldo Borrero Nuñez
 * Country: Colombia
-* City: Bogota
 * LinkedIn: [www.linkedin.com/in/oswaldo-borrero-nuñez-tester-automatizador](https:www.linkedin.com/in/oswaldo-borrero-nuñez-tester-automatizador)
 
 ## 🛠️ Lenguajes & Frameworks
@@ -28,7 +27,8 @@ Este proyecto utiliza los siguientes lenguajes y frameworks:
 
 ***
 
-## 🟢 Pre-requisitos: 🟢
+###Herramientas requeridas 
+Para su instalación leer documentacion de cada items. 
 
 1. Descargar la última versión estable de Java
    JDK [aquí](https://www.oracle.com/co/java/technologies/javase/jdk11-archive-downloads.html)
@@ -38,18 +38,3 @@ Este proyecto utiliza los siguientes lenguajes y frameworks:
 5. Instalar Appium Desktop(Server GUI) [aquí](https://github.com/appium/appium-desktop)
 6. Instalar Appium Inspector [aquí](https://github.com/appium/appium-inspector)
 
-Adicional en su **IDE** de preferencia deberá tener instalados los siguientes plugins:
-
-1. [x] *EnvFile*
-
-
-***
-
-
-La ruta del pipeline se encuentra en: `.github/workflows/automated-testing-integration.yml`
-
-**⏱️ Ejecución automatizada**:   
-El pipepile se ejecutará periódicamente de forma automática por medio la siguiente 'cron schedule expression':
-
-
-***
